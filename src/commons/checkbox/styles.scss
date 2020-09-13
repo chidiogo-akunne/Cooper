@@ -13,6 +13,9 @@
   user-select: none;
   font-size: 14px;
   color: $dark_grey;
+  @media (min-width: 1020px) {
+    margin-bottom: 5px;
+  }
 }
 
 .checkbox_container input {
