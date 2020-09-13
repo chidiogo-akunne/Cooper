@@ -1,0 +1,131 @@
+@import "../../../variables.scss";
+
+#menuToggle {
+  display: block;
+  position: relative;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: $white;
+  font-size: 20px;
+  transition: color 0.3s ease;
+  text-transform: capitalize;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+#menuToggle a:hover,
+#menuToggle a:focus,
+#menuToggle a:active {
+  color: $white;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: $green;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  margin-bottom: 5px;
+  position: relative;
+  background: $white;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transform: rotate3d(3, 2, 2, 10deg);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-1px, -1px);
+  background: $white;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  background-color: $purple;
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  position: fixed;
+  width: 100vh;
+  opacity: 0.92;
+  height: 100%;
+  margin: -160px 0 0 -300px;
+  padding: 50px;
+  padding-top: 125px;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  .menu_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    top: 20px;
+    img {
+      width: 100px;
+    }
+    .button_class {
+      background-color: $green;
+      color: $white;
+      position: relative;
+      left: 63px;
+      font-size: 10px;
+      padding: 3px 15px;
+      border: none;
+      border-radius: 15px;
+      text-transform: capitalize;
+    }
+  }
+  .links {
+    margin-top: 80px;
+  }
+}
+
+#menu li {
+  color: $white;
+  font-size: 20px;
+  text-transform: capitalize;
+  display: block;
+  width: 48%;
+  padding-bottom: 30px;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
