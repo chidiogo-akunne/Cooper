@@ -35,6 +35,9 @@
           width: 60px;
           border-color: $off_white;
           border-width: 0.5px;
+          @media (min-width: 640px) {
+            width: 150px;
+          }
         }
         p {
           font-size: 12px;
@@ -42,6 +45,7 @@
           text-transform: capitalize;
           font-weight: 700;
         }
+        margin-top: 20px;
       }
       .social_cover {
         display: flex;
@@ -51,6 +55,15 @@
         .social_icon {
           width: 40px;
           margin-right: 10px;
+        }
+      }
+    }
+    @media (min-width: 750px) {
+      margin: 60px auto 0;
+      .form {
+        padding: 25px 30px;
+        .social_cover {
+          margin-top: 20px;
         }
       }
     }

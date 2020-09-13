@@ -6,6 +6,9 @@
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
+  @media (min-width: 640px) {
+    margin-bottom: 10px;
+  }
 }
 
 #menuToggle a {
@@ -51,6 +54,10 @@
   transform: rotate3d(3, 2, 2, 10deg);
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  @media (min-width: 750px) {
+    width: 35px;
+    height: 3px;
+  }
 }
 
 #menuToggle span:first-child {
@@ -81,7 +88,7 @@
   backdrop-filter: blur(11px);
   -webkit-backdrop-filter: blur(11px);
   position: fixed;
-  width: 100vh;
+  width: 100%;
   opacity: 0.92;
   height: 100%;
   margin: -160px 0 0 -300px;
@@ -114,6 +121,104 @@
   }
   .links {
     margin-top: 80px;
+    @media (min-width: 640px) {
+      margin-top: 50px;
+    }
+    @media (min-width: 750px) {
+      margin-top: 80px;
+    }
+  }
+  @media (max-width: 280px) {
+    margin: -160px 0 0 -270px;
+    .menu_container {
+      .button_class {
+        left: 38px;
+      }
+    }
+  }
+  @media (min-width: 360px) {
+    margin: -160px 0 0 -350px;
+    .menu_container {
+      .button_class {
+        left: 100px;
+      }
+    }
+  }
+  @media (min-width: 400px) {
+    margin: -160px 0 0 -400px;
+    .menu_container {
+      .button_class {
+        left: 150px;
+      }
+    }
+  }
+  @media (min-width: 520px) {
+    margin: -160px 0 0 -500px;
+    .menu_container {
+      .button_class {
+        left: 230px;
+      }
+    }
+  }
+  @media (min-width: 560px) {
+    margin: -160px 0 0 -530px;
+    .menu_container {
+      .button_class {
+        left: 260px;
+      }
+    }
+  }
+  @media (min-width: 640px) {
+    margin: -160px 0 0 -610px;
+    .menu_container {
+      .button_class {
+        left: 340px;
+      }
+    }
+  }
+  @media (min-width: 660px) {
+    margin: -160px 0 0 -630px;
+    .menu_container {
+      .button_class {
+        left: 360px;
+      }
+    }
+  }
+  @media (min-width: 700px) {
+    margin: -160px 0 0 -700px;
+    .menu_container {
+      .button_class {
+        left: 280px;
+      }
+    }
+  }
+  @media (min-width: 720px) {
+    .menu_container {
+      .button_class {
+        left: 440px;
+      }
+    }
+  }
+  @media (min-width: 750px) {
+    margin: -175px 0 0 -760px;
+    .menu_container {
+      img {
+        margin-left: 20px;
+        width: 150px;
+      }
+      .button_class {
+        left: 400px;
+        padding: 5px 20px;
+        font-size: 15px;
+      }
+    }
+  }
+  @media (min-width: 800px) {
+    .menu_container {
+      .button_class {
+        left: 490px;
+      }
+    }
   }
 }
 
@@ -122,8 +227,23 @@
   font-size: 20px;
   text-transform: capitalize;
   display: block;
-  width: 48%;
+  width: 85%;
   padding-bottom: 30px;
+  // @media (max-width: 280px) {
+  //   width: 38%;
+  // }
+  // @media (min-width: 360px) {
+  //   width: 50%;
+  // }
+  @media (min-width: 400px) {
+    width: 90%;
+  }
+  // @media (min-width: 520px) {
+  //   width: 60%;
+  // }
+  // @media (min-width: 640px) and (max-width: 740px) {
+  //   width: 100%;
+  // }
 }
 
 #menuToggle input:checked ~ ul {

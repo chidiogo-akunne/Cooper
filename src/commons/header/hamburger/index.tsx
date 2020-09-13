@@ -4,9 +4,15 @@ import Button from "../../button";
 
 import "./styles.scss";
 
-export default function Hamburger() {
+interface HamburgerProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export default function Hamburger(props: HamburgerProps) {
+  const { className, style } = props;
   return (
-    <div id="menuToggle">
+    <div id="menuToggle" className={className} style={style}>
       <input type="checkbox" />
       <span></span>
       <span></span>

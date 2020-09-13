@@ -5,9 +5,15 @@ import Hamburger from "../hamburger";
 
 import "./styles.scss";
 
-export default function MobileHeader() {
+interface MobileHeaderProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export default function MobileHeader(props: MobileHeaderProps) {
+  const { className, style } = props;
   return (
-    <div className="container">
+    <div className={`container ${className}`} style={style}>
       <img src="/images/logo2.svg" alt="logo" />
       <div className="cover">
         <Button value="sign up" buttonClass="buttonClass" />
