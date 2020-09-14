@@ -38,9 +38,15 @@ export default function LoginPage() {
         to="signup"
         className="mobile_header"
         buttonValue="sign up"
-        hamburgerValue="signup"
+        hamburgerValue="sign up"
+        logo="/images/logo2.svg"
       />
-      <WebHeader className="web_header" buttonValue="sign in" to="signup" />
+      <WebHeader
+        className="web_header"
+        buttonValue="sign up"
+        to="signup"
+        logo="/images/logo2.svg"
+      />
       <Banner
         header="sign up"
         text="Please log in to explore your space"

@@ -12,18 +12,32 @@ interface MobileHeaderProps {
   buttonValue: string;
   to: string;
   hamburgerValue: string;
+  logo: string;
+  hambugerColor?: React.CSSProperties;
 }
 
 export default function MobileHeader(props: MobileHeaderProps) {
-  const { className, style, buttonValue, to, hamburgerValue } = props;
+  const {
+    className,
+    style,
+    buttonValue,
+    to,
+    hamburgerValue,
+    logo,
+    hambugerColor,
+  } = props;
   return (
     <div className={`container ${className}`} style={style}>
-      <img src="/images/logo2.svg" alt="logo" />
+      <img src={logo} alt="logo" />
       <div className="cover">
         <Link to={to}>
           <Button value={buttonValue} buttonClass="buttonClass" />
         </Link>
-        <Hamburger to={to} hamburgerValue={hamburgerValue} />
+        <Hamburger
+          to={to}
+          hamburgerValue={hamburgerValue}
+          hambugerColor={hambugerColor}
+        />
       </div>
     </div>
   );

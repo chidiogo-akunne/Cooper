@@ -9,13 +9,14 @@ interface WebHeaderProps {
   style?: React.CSSProperties;
   buttonValue: string;
   to: string;
+  logo: string;
 }
 
 export default function WebHeader(props: WebHeaderProps) {
-  const { className, style, buttonValue, to } = props;
+  const { className, style, buttonValue, to, logo } = props;
   return (
     <div className={`web_header_container ${className}`} style={style}>
-      <img src="/images/logo2.svg" alt="logo" />
+      <img src={logo} alt="logo" />
       <div className="web_cover">
         <Link to="/">
           <li>Home</li>
