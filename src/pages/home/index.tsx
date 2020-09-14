@@ -25,7 +25,7 @@ export default function Home() {
         logo="/images/logo.svg"
       />
       <div className="home_banner">
-        <img src="/images/piggysave.svg" />
+        <img src="/images/piggysave.svg" alt="piggy safe" />
         <div className="save_for_tomorrow">
           <h1>save for tomorrow</h1>
           <p>
@@ -45,36 +45,40 @@ export default function Home() {
         </div>
       </div>
       <div className="how_it_works">
-        <img src="/images/howitworks.svg" alt="how it works" />
-        <div className="work_group">
-          <span className="work_green">
-            Aenean non accumsan ante. Duis et risus accumsan sem tempus porta
-            nec sit amet est. Sed ut euismod quam. Suspendisse potenti.
-          </span>
-          <span className="number_cover">1</span>
+        <div className="work_col">
+          <img src="/images/howitworks.svg" alt="how it works" />
         </div>
-        <div className="work_group">
-          <span className="number_cover">2</span>
-          <span className="work_purple">
-            Aenean non accumsan ante. Duis et risus accumsan sem tempus porta
-            nec sit amet est. Sed ut euismod quam. Suspendisse potenti.
-          </span>
+        <div className="work_col">
+          <div className="work_group">
+            <span className="work_green">
+              Aenean non accumsan ante. Duis et risus accumsan sem tempus porta
+              nec sit amet est. Sed ut euismod quam. Suspendisse potenti.
+            </span>
+            <span className="number_cover">1</span>
+          </div>
+          <div className="work_group">
+            <span className="number_cover">2</span>
+            <span className="work_purple">
+              Aenean non accumsan ante. Duis et risus accumsan sem tempus porta
+              nec sit amet est. Sed ut euismod quam. Suspendisse potenti.
+            </span>
+          </div>
+          <div className="work_group">
+            <span className="work_green">
+              Aenean non accumsan ante. Duis et risus accumsan sem tempus porta
+              nec sit amet est. Sed ut euismod quam. Suspendisse potenti.
+            </span>
+            <span className="number_cover">3</span>
+          </div>
+          <div className="work_group">
+            <span className="number_cover">4</span>
+            <span className="work_purple">
+              Aenean non accumsan ante. Duis et risus accumsan sem tempus porta
+              nec sit amet est. Sed ut euismod quam. Suspendisse potenti.
+            </span>
+          </div>
+          <Button value="start now" buttonClass="start_button" />
         </div>
-        <div className="work_group">
-          <span className="work_green">
-            Aenean non accumsan ante. Duis et risus accumsan sem tempus porta
-            nec sit amet est. Sed ut euismod quam. Suspendisse potenti.
-          </span>
-          <span className="number_cover">3</span>
-        </div>
-        <div className="work_group">
-          <span className="number_cover">4</span>
-          <span className="work_purple">
-            Aenean non accumsan ante. Duis et risus accumsan sem tempus porta
-            nec sit amet est. Sed ut euismod quam. Suspendisse potenti.
-          </span>
-        </div>
-        <Button value="start now" buttonClass="start_button" />
       </div>
       <MobileFooter className="mobile_footer" />
       <WebFooter className="web_footer" />
