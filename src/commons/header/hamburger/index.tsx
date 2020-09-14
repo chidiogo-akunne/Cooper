@@ -9,16 +9,17 @@ interface HamburgerProps {
   style?: React.CSSProperties;
   to: string;
   hamburgerValue: string;
+  hambugerColor?: React.CSSProperties;
 }
 
 export default function Hamburger(props: HamburgerProps) {
-  const { className, style, to, hamburgerValue } = props;
+  const { className, style, to, hamburgerValue, hambugerColor } = props;
   return (
     <div id="menuToggle" className={className} style={style}>
       <input type="checkbox" />
-      <span></span>
-      <span></span>
-      <span></span>
+      <span style={hambugerColor}></span>
+      <span style={hambugerColor}></span>
+      <span style={hambugerColor}></span>
       <ul id="menu">
         <div className="menu_container">
           <img src="/images/logo2.svg" alt="logo" />
