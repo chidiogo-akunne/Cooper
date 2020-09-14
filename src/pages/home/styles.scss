@@ -136,7 +136,7 @@
       background-color: $header_color;
     }
     .home_banner {
-      flex-direction: row;
+      flex-direction: row-reverse;
       padding: 20px 100px 100px;
       img {
         width: 450px;
@@ -144,18 +144,20 @@
       .save_for_tomorrow {
         margin-top: 65px;
         h1 {
-          padding: 0 70px;
+          padding: 0 55px;
           text-align: left;
           margin-bottom: 10px;
+          width: 50%;
         }
         p {
           padding: 0 50px;
         }
         .start_button_cover {
           flex-direction: row;
-          justify-content: center;
+          justify-content: flex-start;
           align-items: center;
           margin-top: 10px;
+          margin-left: 50px;
           .ajo_button {
             margin-bottom: 40px;
             margin-right: 20px;

@@ -23,6 +23,7 @@ export default function Home() {
         buttonValue="sign in"
         to="login"
         logo="/images/logo.svg"
+        linkColor={{ color: "#707070" }}
       />
       <div className="home_banner">
         <img src="/images/piggysave.svg" alt="piggy safe" />
