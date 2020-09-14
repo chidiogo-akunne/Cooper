@@ -229,21 +229,9 @@
   display: block;
   width: 85%;
   padding-bottom: 30px;
-  // @media (max-width: 280px) {
-  //   width: 38%;
-  // }
-  // @media (min-width: 360px) {
-  //   width: 50%;
-  // }
   @media (min-width: 400px) {
     width: 90%;
   }
-  // @media (min-width: 520px) {
-  //   width: 60%;
-  // }
-  // @media (min-width: 640px) and (max-width: 740px) {
-  //   width: 100%;
-  // }
 }
 
 #menuToggle input:checked ~ ul {

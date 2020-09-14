@@ -28,6 +28,14 @@
         text-decoration: none;
       }
     }
+    a:hover,
+    a:focus,
+    a:active {
+      color: $white;
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: $green;
+    }
     .web_buttonClass {
       background-color: $green;
       color: $white;
