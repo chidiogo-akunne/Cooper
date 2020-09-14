@@ -9,6 +9,8 @@ import "./styles.scss";
 import Checkbox from "../../commons/checkbox";
 import SubmitButton from "../../components/submitButton";
 import WebHeader from "../../commons/header/webHeader";
+import MobileFooter from "../../commons/footer/mobileFooter";
+import WebFooter from "../../commons/footer/webFooter";
 
 export default function LoginPage() {
   const [state, setState] = useState({
@@ -99,6 +101,8 @@ export default function LoginPage() {
           <img src="/images/dollarPot.svg" alt="dollar pot" />
         </Card>
       </div>
+      <MobileFooter className="mobile_footer" />
+      <WebFooter className="web_footer" />
     </div>
   );
 }
