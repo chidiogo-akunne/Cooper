@@ -1,0 +1,194 @@
+@import "../../variables.scss";
+
+.home_container {
+  background-color: $light_purple;
+
+  .mobile_header {
+    background-color: $header_color;
+  }
+  .web_header {
+    display: none;
+  }
+  .web_footer {
+    display: none;
+  }
+  .home_banner {
+    display: flex;
+    flex-direction: column;
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 300px;
+      padding-top: 60px;
+    }
+    h1 {
+      color: $green;
+      font-size: 45px;
+      font-weight: 800;
+      text-align: center;
+      text-transform: capitalize;
+      padding: 0 30px;
+    }
+    p {
+      color: $dark_grey;
+      font-size: 16px;
+      padding: 0 20px;
+    }
+    .start_button_cover {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .ajo_button {
+        background-color: $green;
+        color: $white;
+        font-size: 16px;
+        padding: 8px 25px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 10px;
+        text-transform: capitalize;
+        font-size: 700;
+      }
+      .cooperative_button {
+        background-color: $purple;
+        color: $white;
+        font-size: 16px;
+        padding: 8px 20px;
+        margin-bottom: 40px;
+        border: none;
+        border-radius: 10px;
+        text-transform: capitalize;
+        font-size: 700;
+      }
+    }
+  }
+  .how_it_works {
+    background-color: $white;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    img {
+      width: 150px;
+      display: block;
+      margin: 10px auto;
+    }
+    .work_group {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 0 30px;
+      .work_green {
+        background-color: $topaz;
+        color: $light_grey;
+        font-size: 16px;
+        padding: 10px 15px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+      }
+      .work_purple {
+        background-color: $light_purple;
+        color: $light_grey;
+        font-size: 16px;
+        padding: 10px 15px;
+        margin-left: 5px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+      }
+      .number_cover {
+        background-color: $purple;
+        color: $white;
+        width: 120px;
+        height: 25px;
+        border-radius: 60px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .start_button {
+      background-color: $purple;
+      color: $white;
+      font-size: 16px;
+      display: block;
+      padding: 9px 60px;
+      margin: 15px auto;
+      border: none;
+      border-radius: 10px;
+      text-transform: capitalize;
+      font-size: 700;
+    }
+  }
+  @media (min-width: 1020px) {
+    .mobile_header {
+      display: none;
+    }
+    .mobile_footer {
+      display: none;
+    }
+    .web_footer {
+      display: flex;
+    }
+    .web_header {
+      display: flex;
+      background-color: $header_color;
+    }
+    .home_banner {
+      flex-direction: row-reverse;
+      padding: 20px 100px 100px;
+      img {
+        width: 450px;
+      }
+      .save_for_tomorrow {
+        margin-top: 65px;
+        h1 {
+          padding: 0 55px;
+          text-align: left;
+          margin-bottom: 10px;
+          width: 50%;
+        }
+        p {
+          padding: 0 50px;
+        }
+        .start_button_cover {
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-top: 10px;
+          margin-left: 50px;
+          .ajo_button {
+            margin-bottom: 40px;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+    .how_it_works {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      .work_col {
+        width: 50%;
+        padding: 20px 60px;
+        img {
+          width: 400px;
+        }
+        .start_button {
+          padding: 9px 40px;
+          margin: 15px 25px 0 auto;
+          border: none;
+          border-radius: 10px;
+          text-transform: capitalize;
+          font-size: 700;
+        }
+        .number_cover {
+          width: 110px;
+          height: 39px;
+          border-radius: 85px;
+        }
+      }
+    }
+  }
+}

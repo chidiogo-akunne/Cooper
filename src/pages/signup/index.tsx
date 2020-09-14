@@ -41,8 +41,14 @@ export default function LoginPage() {
         buttonValue="sign in"
         hamburgerValue="sign in"
         to="login"
+        logo="/images/logo2.svg"
       />
-      <WebHeader to="login" className="web_header" buttonValue="sign in" />
+      <WebHeader
+        to="login"
+        className="web_header"
+        buttonValue="sign in"
+        logo="/images/logo2.svg"
+      />
       <Banner
         header="sign up"
         text="Please fill the form to create an account."

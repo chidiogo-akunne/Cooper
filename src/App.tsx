@@ -5,6 +5,7 @@ import SuspenseBoundary from "./commons/boundary/suspense";
 
 const SignUp = lazy(() => import("./pages/signup"));
 const Login = lazy(() => import("./pages/login"));
+const Home = lazy(() => import("./pages/home"));
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         </Route>
         <Route path="/signup" exact>
           <SignUp />
+        </Route>
+        <Route path="/" exact>
+          <Home />
         </Route>
       </SuspenseBoundary>
     </Switch>
