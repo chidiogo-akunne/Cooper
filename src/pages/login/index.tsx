@@ -1,16 +1,17 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import MobileHeader from "../../commons/header/mobileHeader";
 import Banner from "../../components/banner";
 import Card from "../../commons/card";
 import Input from "../../commons/input";
-
-import "./styles.scss";
 import Checkbox from "../../commons/checkbox";
 import SubmitButton from "../../components/submitButton";
 import WebHeader from "../../commons/header/webHeader";
 import MobileFooter from "../../commons/footer/mobileFooter";
 import WebFooter from "../../commons/footer/webFooter";
+
+import "./styles.scss";
 
 export default function LoginPage() {
   const [state, setState] = useState({
@@ -33,10 +34,15 @@ export default function LoginPage() {
   };
   return (
     <div className="login_container">
-      <MobileHeader className="mobile_header" buttonValue="sign in" />
-      <WebHeader className="web_header" buttonValue="sign in" />
+      <MobileHeader
+        to="signup"
+        className="mobile_header"
+        buttonValue="sign up"
+        hamburgerValue="signup"
+      />
+      <WebHeader className="web_header" buttonValue="sign in" to="signup" />
       <Banner
-        header="sign in"
+        header="sign up"
         text="Please log in to explore your space"
         cardClass="banner"
       />
@@ -62,7 +68,9 @@ export default function LoginPage() {
             <Checkbox value="Keep me signed in" />
             <SubmitButton value="sign in" buttonClass="sign_button" />
             <h4>new user?</h4>
-            <SubmitButton value="sign up" buttonClass="login_button" />
+            <Link to="signup">
+              <SubmitButton value="sign up" buttonClass="login_button" />
+            </Link>
             <div className="options">
               <hr />
               <p>or sign in with</p>

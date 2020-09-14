@@ -7,10 +7,12 @@ import "./styles.scss";
 interface HamburgerProps {
   className?: string;
   style?: React.CSSProperties;
+  to: string;
+  hamburgerValue: string;
 }
 
 export default function Hamburger(props: HamburgerProps) {
-  const { className, style } = props;
+  const { className, style, to, hamburgerValue } = props;
   return (
     <div id="menuToggle" className={className} style={style}>
       <input type="checkbox" />
@@ -20,7 +22,9 @@ export default function Hamburger(props: HamburgerProps) {
       <ul id="menu">
         <div className="menu_container">
           <img src="/images/logo2.svg" alt="logo" />
-          <Button value="sign up" buttonClass="button_class" />
+          <Link to={to}>
+            <Button value={hamburgerValue} buttonClass="button_class" />
+          </Link>
         </div>
         <div className="links">
           <Link to="/">
