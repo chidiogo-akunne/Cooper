@@ -1,0 +1,23 @@
+@import "../../variables.scss";
+
+.input_container {
+  margin-bottom: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  .input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid $input;
+    color: $light_grey;
+    padding: 0.4rem 0;
+    outline: none;
+    font-size: 0.8rem;
+  }
+  @media (min-width: 750px) {
+    margin-bottom: 0.8rem;
+  }
+  @media (min-width: 1020px) {
+    margin-bottom: 0.5rem;
+  }
+}
