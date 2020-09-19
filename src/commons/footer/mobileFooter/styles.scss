@@ -5,23 +5,23 @@
   flex-direction: column;
   justify-content: flex-end;
   background-color: $purple;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 0;
-  padding-bottom: 0;
-  padding-top: 100px;
+  padding-bottom: 10px;
+  padding-top: 50px;
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
 
   a {
     color: $white;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     text-align: center;
     list-style: none;
     text-decoration: none;
     li {
       text-decoration: none;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       list-style: none;
     }
   }
@@ -39,21 +39,21 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 20px;
     .footer_social_icon {
       margin-right: 20px;
-      width: 45px;
+      width: 40px;
     }
   }
   .footer_logo {
     width: 200px;
     display: block;
-    margin: 30px auto 10px;
+    margin: 25px auto 0;
   }
   p {
     color: $white;
     font-size: 14px;
     text-align: center;
-    padding: 10px 0 30px;
+    padding: 5px 0 20px;
   }
 }

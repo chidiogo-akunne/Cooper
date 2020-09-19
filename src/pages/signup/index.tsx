@@ -52,7 +52,7 @@ export default function LoginPage() {
       <Banner
         header="sign up"
         text="Please fill the form to create an account."
-        cardClass="banner"
+        cardClass="sign_banner"
       />
       <div className="login_content">
         <Card cardClass="card_cover">
@@ -87,7 +87,7 @@ export default function LoginPage() {
               name="password"
               value={password}
               onChange={handleChange}
-              inputClass="input_container"
+              inputClass="input_container last_input"
             />
             <div className="select_container">
               <h4>Role:</h4>
@@ -133,10 +133,10 @@ export default function LoginPage() {
             </div>
           </form>
         </Card>
-        <Card cardClass="second_card_cover">
+        <Card cardClass="second_card_cover signup_cover">
           <h1>sign in</h1>
           <p>
-            Please, sign in to explore <br /> your spaces
+            Please fill the form to <br /> create an account
           </p>
 
           <img src="/images/dollarPot.svg" alt="dollar pot" />

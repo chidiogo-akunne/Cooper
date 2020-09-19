@@ -1,4 +1,3 @@
-//color variables
 $white: #ffffff;
 $green: #008f71;
 $inactive: #00000029;
@@ -25,3 +24,15 @@ $pink: #ff00ff;
 $blue: #1473e6;
 $header_color: #dedede;
 $light_purple: #f5ecf9;
+
+//font
+@font-face {
+  font-family: "Montserrat Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/public/fonts/Montserrat/Montserrat-Regular.ttf"); /* IE9 Compat Modes */
+}
+
+$default_font: "Montserrat Regular", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  "Droid Sans", "Helvetica Neue", sans-serif;

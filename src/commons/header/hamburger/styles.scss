@@ -102,7 +102,7 @@
   .menu_container {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: flex-start;
     top: 20px;
     img {
       width: 100px;
@@ -152,6 +152,14 @@
       }
     }
   }
+  @media (min-width: 445px) and (max-width: 520px) {
+    margin: -160px 0 0 -450px;
+    .menu_container {
+      .button_class {
+        left: 200px;
+      }
+    }
+  }
   @media (min-width: 520px) {
     margin: -160px 0 0 -500px;
     .menu_container {
@@ -168,6 +176,14 @@
       }
     }
   }
+  @media (min-width: 570px) and (max-width: 640px) {
+    margin: -160px 0 0 -595px;
+    .menu_container {
+      .button_class {
+        left: 350px;
+      }
+    }
+  }
   @media (min-width: 640px) {
     margin: -160px 0 0 -610px;
     .menu_container {
@@ -181,6 +197,14 @@
     .menu_container {
       .button_class {
         left: 360px;
+      }
+    }
+  }
+  @media (min-width: 670px) and (max-width: 700px) {
+    margin: -160px 0 0 -655px;
+    .menu_container {
+      .button_class {
+        left: 390px;
       }
     }
   }
@@ -208,6 +232,7 @@
       }
       .button_class {
         left: 400px;
+        top: 15px;
         padding: 5px 20px;
         font-size: 15px;
       }
@@ -219,6 +244,30 @@
         left: 490px;
       }
     }
+  }
+  @media (min-width: 825px) {
+    margin: -175px 0 0 -810px;
+    .menu_container {
+      .button_class {
+        left: 470px;
+        top: 15px;
+      }
+    }
+  }
+  @media (min-width: 885px) {
+    margin: -175px 0 0 -840px;
+  }
+  @media (min-width: 905px) {
+    margin: -175px 0 0 -865px;
+  }
+  @media (min-width: 930px) {
+    margin: -175px 0 0 -890px;
+  }
+  @media (min-width: 955px) {
+    margin: -175px 0 0 -915px;
+  }
+  @media (min-width: 980px) {
+    margin: -175px 0 0 -955px;
   }
 }
 
