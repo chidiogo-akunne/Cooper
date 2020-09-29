@@ -1,0 +1,146 @@
+@import "../../variables.scss";
+
+.dashboard_container {
+  padding-top: 15px;
+  .button_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .create_button {
+      display: flex;
+      border: none;
+      justify-content: center;
+      align-items: center;
+      border-radius: 9px;
+      color: $dark_grey;
+      font-size: 17px;
+      margin-right: 5px;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 15px 0 15px 15px;
+      font-weight: 600;
+      img {
+        width: 25px;
+        margin-left: 20px;
+      }
+    }
+    .cooperative_button {
+      background-color: $topaz;
+    }
+    .ajo_button {
+      background-color: $light_purple;
+    }
+
+    .save_button {
+      background-color: $secondary_grey;
+    }
+    @media (min-width: 768px) {
+      .create_button {
+        width: 40%;
+      }
+    }
+  }
+  .dashboard_card {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    .card_header {
+      border-radius: 9px;
+      h4 {
+        font-size: 24px;
+        font-weight: 700;
+        color: $white;
+        padding: 25px 15px;
+        line-height: 0.5;
+        margin-top: 0;
+      }
+    }
+    .cooperative_card {
+      background-color: $green;
+      box-shadow: 0px 3px 6px #008f713b;
+      margin-top: 20px;
+    }
+    .investment_card {
+      background-color: $dark_grey;
+      box-shadow: 0px 3px 6px $dark_grey;
+    }
+    .ajo_card {
+      background-color: $purple;
+      box-shadow: 0px 3px 6px #66009921;
+    }
+    h4 {
+      color: $dark_grey;
+      font-size: 22px;
+      font-weight: 300;
+      padding-left: 20px;
+      text-transform: capitalize;
+      margin-bottom: 0;
+    }
+    h2 {
+      color: $dark_grey;
+      font-size: 39px;
+      padding-left: 20px;
+      margin-top: 1px;
+    }
+    .card_h2 {
+      margin-bottom: 0;
+    }
+    .card_button {
+      border: none;
+      border-radius: 6px;
+      color: $white;
+      padding: 6px 10px;
+      margin-left: auto;
+      display: block;
+      margin-right: 10px;
+      font-size: 9px;
+    }
+    .co-operative_button {
+      background-color: $green;
+    }
+    .contribute_button {
+      background-color: $purple;
+    }
+    .save_button {
+      background-color: $dark_grey;
+    }
+  }
+
+  @media (min-width: 1020px) {
+    padding: 0 60px;
+    margin-bottom: 30px;
+    .button_container {
+      justify-content: flex-start;
+      .create_button {
+        width: 250px;
+        margin-right: 25px;
+        padding-left: 0;
+      }
+    }
+    .dashboard_card_container {
+      .cooperative_card {
+        margin-top: 0;
+      }
+      .card_wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+        .dashboard_card {
+          width: 49%;
+        }
+        .save_card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .save_wrapper {
+            margin-top: 45px;
+          }
+        }
+      }
+    }
+  }
+}
