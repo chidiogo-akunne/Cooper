@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, Redirect } from "react-router-dom";
+import axios from "axios";
 import MobileHeader from "../../commons/header/mobileHeader";
 import Banner from "../../components/banner";
 import Card from "../../commons/card";
@@ -9,19 +9,27 @@ import SubmitButton from "../../components/submitButton";
 import WebHeader from "../../commons/header/webHeader";
 import MobileFooter from "../../commons/footer/mobileFooter";
 import WebFooter from "../../commons/footer/webFooter";
+import { useAuthContext } from "../../commons/auth/context";
 
 import "../login/styles.scss";
 
-export default function LoginPage() {
+export default function SignupPage(props: any) {
+  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [state, setState] = useState({
     email: "",
     password: "",
     firstName: "",
     lastName: "",
-    role: "",
+    username: "",
   });
 
-  const { email, password, firstName, lastName } = state;
+  const { email, password, firstName, lastName, username } = state;
+
+  const referer = props.location || "/dashboard";
+
+  //@ts-ignore
+  const { setAuthTokens } = useAuthContext();
 
   const handleChange = (event: any) => {
     event.persist();
@@ -33,7 +41,32 @@ export default function LoginPage() {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    console.log("loading");
+    axios
+      .post(`${process.env.REACT_APP_SERVER_URI}/api/register/`, {
+        email,
+        password,
+        firstName,
+        lastName,
+        username,
+      })
+      .then((result) => {
+        if (result.status === 200) {
+          setAuthTokens(result.data.token);
+          setLoggedIn(true);
+        } else {
+          setIsError(true);
+        }
+      })
+      .catch((e) => {
+        setIsError(true);
+      });
   };
+
+  if (isLoggedIn) {
+    return <Redirect to={referer} />;
+  }
+
   return (
     <div className="login_container">
       <MobileHeader
@@ -42,7 +75,23 @@ export default function LoginPage() {
         hamburgerValue="sign in"
         to="login"
         logo="/images/logo2.svg"
-      />
+      >
+        <Link to="/">
+          <li>Home</li>
+        </Link>
+        <Link to="/ajo">
+          <li>Ajo</li>
+        </Link>
+        <Link to="/cooperative">
+          <li>Cooperative</li>
+        </Link>
+        <Link to="/about">
+          <li>About</li>
+        </Link>
+        <Link to="/help">
+          <li>Help</li>
+        </Link>
+      </MobileHeader>
       <WebHeader
         to="login"
         className="web_header"
@@ -74,6 +123,14 @@ export default function LoginPage() {
               inputClass="input_container"
             />
             <Input
+              type="text"
+              placeholder="Username"
+              name="username"
+              value={username}
+              onChange={handleChange}
+              inputClass="input_container"
+            />
+            <Input
               type="email"
               placeholder="Email"
               name="email"
@@ -89,17 +146,8 @@ export default function LoginPage() {
               onChange={handleChange}
               inputClass="input_container last_input"
             />
-            <div className="select_container">
-              <h4>Role:</h4>
-              <div className="select">
-                <select>
-                  <option>None</option>
-                  <option>Contributor</option>
-                  <option>Admin</option>
-                </select>
-              </div>
-            </div>
             <SubmitButton value="sign up" buttonClass="login_button" />
+            {isError && <h1>The data provided were incorrect!</h1>}
             <h4>already a user?</h4>
             <Link to="login">
               <SubmitButton value="sign in" buttonClass="sign_button" />
@@ -139,7 +187,11 @@ export default function LoginPage() {
             Please fill the form to <br /> create an account
           </p>
 
-          <img src="/images/dollarPot.svg" alt="dollar pot" />
+          <img
+            src="/images/signup.svg"
+            className="signup_image"
+            alt="dollar pot"
+          />
         </Card>
       </div>
       <MobileFooter className="mobile_footer" />
