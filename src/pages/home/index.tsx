@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MobileHeader from "../../commons/header/mobileHeader";
 import WebHeader from "../../commons/header/webHeader";
 import WebFooter from "../../commons/footer/webFooter";
 import MobileFooter from "../../commons/footer/mobileFooter";
+import Button from "../../commons/button";
 
 import "./styles.scss";
-import Button from "../../commons/button";
 
 export default function Home() {
   return (
@@ -78,7 +79,9 @@ export default function Home() {
               nec sit amet est. Sed ut euismod quam. Suspendisse potenti.
             </span>
           </div>
-          <Button value="start now" buttonClass="start_button" />
+          <Link to="/signup">
+            <Button value="start now" buttonClass="start_button" />
+          </Link>
         </div>
       </div>
       <MobileFooter className="mobile_footer" />

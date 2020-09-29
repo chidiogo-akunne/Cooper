@@ -1,0 +1,86 @@
+@import "../../variables.scss";
+
+.contribution_container {
+  background-color: $white;
+  padding-bottom: 20px;
+  .contribution_header {
+    background-color: $purple;
+    color: $white;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 15px 10px;
+    margin: 15px 0;
+    border-radius: 10px;
+  }
+  .contribution_card {
+    background-color: $secondary_grey;
+    border-radius: 10px;
+    margin-top: 30px;
+    .card_header {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      p {
+        display: inline;
+        color: $dark_grey;
+        background-color: $white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        margin-left: 25px;
+        position: relative;
+        top: 20px;
+      }
+    }
+    .requirement {
+      display: flex;
+      flex-direction: row;
+      background-color: $secondary_grey;
+      box-shadow: 0px 3px 6px #66009921;
+      padding: 15px 0;
+      span {
+        padding-left: 20px;
+        p {
+          margin: 0;
+          color: $purple;
+          font-size: 12px;
+        }
+        span {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 0;
+          font-size: 15px;
+          font-weight: 600;
+          color: $dark_grey;
+          p {
+            font-size: 15px;
+            font-weight: 400;
+            color: $dark_grey;
+            padding-left: 4px;
+          }
+        }
+      }
+      .details_button {
+        background-color: $purple;
+        color: $white;
+        font-size: 10px;
+        padding: 2px 7px;
+        margin-left: auto;
+        margin-right: 15px;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+  }
+  @media (min-width: 1020px) {
+    padding: 0 60px 20px;
+    .contribution_header {
+      padding: 20px;
+    }
+    .contribution_wrapper {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 10px;
+    }
+  }
+}

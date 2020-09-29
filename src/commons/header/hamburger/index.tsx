@@ -4,16 +4,25 @@ import Button from "../../button";
 
 import "./styles.scss";
 
-interface HamburgerProps {
+interface HamburgerProps extends React.PropsWithChildren<unknown> {
   className?: string;
   style?: React.CSSProperties;
   to: string;
   hamburgerValue: string;
   hambugerColor?: React.CSSProperties;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 export default function Hamburger(props: HamburgerProps) {
-  const { className, style, to, hamburgerValue, hambugerColor } = props;
+  const {
+    className,
+    style,
+    to,
+    hamburgerValue,
+    hambugerColor,
+    children,
+    onClick,
+  } = props;
   return (
     <div id="menuToggle" className={className} style={style}>
       <input type="checkbox" />
@@ -24,26 +33,14 @@ export default function Hamburger(props: HamburgerProps) {
         <div className="menu_container">
           <img src="/images/logo2.svg" alt="logo" />
           <Link to={to}>
-            <Button value={hamburgerValue} buttonClass="button_class" />
+            <Button
+              value={hamburgerValue}
+              buttonClass="button_class"
+              onClick={onClick}
+            />
           </Link>
         </div>
-        <div className="links">
-          <Link to="/">
-            <li>Home</li>
-          </Link>
-          <Link to="/ajo">
-            <li>Ajo</li>
-          </Link>
-          <Link to="/cooperative">
-            <li>Cooperative</li>
-          </Link>
-          <Link to="/about">
-            <li>About</li>
-          </Link>
-          <Link to="/help">
-            <li>Help</li>
-          </Link>
-        </div>
+        <div className="links">{children}</div>
       </ul>
     </div>
   );

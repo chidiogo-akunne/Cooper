@@ -201,6 +201,10 @@
       }
       .signup_cover {
         background-color: $green !important;
+        img {
+          width: 320px !important;
+          margin-top: 100px !important;
+        }
       }
       .second_card_cover {
         display: block;
