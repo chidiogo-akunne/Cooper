@@ -41,7 +41,6 @@ export default function SignupPage(props: any) {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    console.log("loading");
     axios
       .post(`${process.env.REACT_APP_SERVER_URI}/api/register/`, {
         email,
@@ -53,6 +52,7 @@ export default function SignupPage(props: any) {
       .then((result) => {
         if (result.status === 200) {
           setAuthTokens(result.data.token);
+          localStorage.setItem("id", JSON.stringify(result.data.user.id));
           setLoggedIn(true);
         } else {
           setIsError(true);

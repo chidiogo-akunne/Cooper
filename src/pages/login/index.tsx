@@ -46,6 +46,7 @@ export default function LoginPage(props: any) {
         if (result.status === 200) {
           setAuthTokens(result.data.token);
           setLoggedIn(true);
+          localStorage.setItem("id", JSON.stringify(result.data.user.id));
         } else {
           setIsError(true);
         }
