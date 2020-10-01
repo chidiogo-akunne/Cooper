@@ -34,11 +34,11 @@ export default function DashboardLayout(props: LayoutProps) {
   }
 
   const token = localStorage.getItem("tokens");
-  const id = localStorage.getItem("id");
+  // const id = localStorage.getItem("id");
 
   function RequestAjo() {
     axios
-      .post(`${process.env.REACT_APP_SERVER_URI}/api/ajoadminrequest/${id}`, {
+      .post(`${process.env.REACT_APP_SERVER_URI}/api/ajoadminrequest`, {
         token,
       })
       .then((result) => {
