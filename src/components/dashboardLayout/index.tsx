@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import {
   mdiPower,
   mdiHomeOutline,
@@ -16,17 +17,42 @@ import Card from "../../commons/card";
 import IconButton from "../../commons/iconButton";
 
 import "./styles.scss";
+import Button from "../../commons/button";
 
 interface LayoutProps extends React.PropsWithChildren<unknown> {}
 
 export default function DashboardLayout(props: LayoutProps) {
   const { children } = props;
 
+  const [isError, setIsError] = useState(false);
+
   function logoutHandler(e: React.MouseEvent<HTMLElement>) {
     e.preventDefault();
     localStorage.removeItem("tokens");
+    localStorage.removeItem("id");
     window.location.href = "/";
   }
+
+  const token = localStorage.getItem("tokens");
+  const id = localStorage.getItem("id");
+
+  function RequestAjo() {
+    axios
+      .post(`${process.env.REACT_APP_SERVER_URI}/api/ajoadminrequest/${id}`, {
+        token,
+      })
+      .then((result) => {
+        if (result.status === 200) {
+          console.log("successful");
+        } else {
+          setIsError(true);
+        }
+      })
+      .catch((e) => {
+        setIsError(true);
+      });
+  }
+
   return (
     <div className="dashboard_layout">
       <MobileHeader
@@ -58,6 +84,7 @@ export default function DashboardLayout(props: LayoutProps) {
         <Link to="/help">
           <li>Help</li>
         </Link>
+        <Button value="Request Ajo" onClick={RequestAjo} />
       </MobileHeader>
       <div className="layout_container">
         <div className="layout_nav">
@@ -146,12 +173,13 @@ export default function DashboardLayout(props: LayoutProps) {
                 Help
               </li>
             </Link>
+            <Button value="Request Ajo" onClick={RequestAjo} />
           </div>
         </div>
         <div className="layout_content">
           <div className="layout_header">
             <Card cardClass="alert_card">
-              <h5>This section will be for a random info/ALERT</h5>
+              {isError && <h5>The data provided were incorrect!</h5>}
             </Card>
             <IconButton buttonClass="logout" onClick={logoutHandler}>
               <Icon
